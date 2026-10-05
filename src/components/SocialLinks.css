@@ -1,0 +1,127 @@
+/* ============================================
+   SOCIAL LINKS COMPONENT STYLES
+   ============================================ */
+
+.social-links {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.social-links--default {
+  justify-content: center;
+}
+
+.social-links--hero {
+  justify-content: center;
+}
+
+.social-links--compact {
+  justify-content: flex-start;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.social-external {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.social-link:hover .social-external { opacity: 1; }
+
+/* Contact Item */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.contact-item--default {
+  padding: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: var(--radius-lg);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.contact-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-value {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  word-break: break-word;
+  transition: color var(--transition-fast);
+}
+
+.contact-value:hover { color: var(--accent); }
+
+.contact-value .icon-xs { width: 14px; height: 14px; margin-left: var(--space-1); }
+
+/* Compact variant for footer */
+.contact-item--compact {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.contact-item--compact .contact-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.contact-item--compact .contact-label { font-size: 11px; }
+.contact-item--compact .contact-value { font-size: var(--font-size-sm); }

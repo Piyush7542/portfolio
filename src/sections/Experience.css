@@ -1,0 +1,64 @@
+/* ============================================
+   EXPERIENCE SECTION STYLES - Enhanced
+   ============================================ */
+
+.experience { background: var(--bg-secondary); }
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--border-color));
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.timeline-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-10);
+  padding-left: var(--space-14);
+}
+
+@media (max-width: 640px) {
+  .timeline-container::before { left: 12px; }
+  .timeline-wrapper { padding-left: var(--space-10); }
+}
+
+/* Timeline Card - styles in GlassCard.css */
+/* Additional timeline connector */
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg-secondary);
+  box-shadow: 0 0 0 3px var(--accent), var(--shadow-glow);
+  z-index: 2;
+}
+
+.timeline-wrapper:last-child::after {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+  opacity: 0.3;
+}
+
+/* Hover effects on timeline cards handled by GlassCard.css */

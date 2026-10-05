@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(16,185,129,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Glow -->
+  <ellipse cx="900" cy="150" rx="300" ry="200" fill="rgba(16,185,129,0.08)"/>
+  <!-- Content -->
+  <text x="600" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="56" fill="white">Piyush Anand</text>
+  <text x="600" y="320" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="400" font-size="28" fill="#94a3b8">Senior Data & Visualisation Analyst</text>
+  <text x="600" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="400" font-size="20" fill="#64748b">Product & Customer Analytics • ML • Tableau • Databricks</text>
+  <!-- Accent line -->
+  <line x1="450" y1="420" x2="750" y2="420" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+  <!-- Links -->
+  <text x="600" y="500" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="18" fill="#64748b">piyush-anand.netlify.app</text>
+  <!-- Logo -->
+  <circle cx="600" cy="560" r="24" fill="#10b981"/>
+  <text x="600" y="566" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="white">PA</text>
+</svg>

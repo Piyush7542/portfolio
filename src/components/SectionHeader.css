@@ -1,0 +1,44 @@
+/* ============================================
+   SECTION HEADER STYLES
+   ============================================ */
+
+.section-header {
+  max-width: 720px;
+  margin-bottom: var(--space-16);
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+.section-title {
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Left alignment variant */
+.section-header.text-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Animation delays for stagger effect */
+.section-header.animate-fade-up {
+  animation-delay: 0ms;
+}
+
+.section-header .section-tag { animation-delay: 100ms; }
+.section-header .section-title { animation-delay: 200ms; }
+.section-header .section-subtitle { animation-delay: 300ms; }
