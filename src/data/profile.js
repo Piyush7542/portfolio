@@ -10,7 +10,7 @@ export const profile = {
   email: "agnohotri8409986813@gmail.com",
   phone: "+91 7542994378",
   linkedin: "https://linkedin.com/in/piyush-anand-senior-data-analyst",
-  github: "https://github.com/[ADD_GITHUB_USERNAME]", // 🔴 UPDATE THIS
+  github: "https://github.com/Piyush7542",
   resumeUrl: "/resume/Piyush_Anand_Resume.pdf", // Place PDF in public/resume/
   
   // Hero section
