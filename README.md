@@ -2,12 +2,19 @@
 
 A modern, professional portfolio website for **Piyush Anand**, Senior Data & Visualisation Analyst specializing in Product & Customer Analytics.
 
+## 🌐 Live Demo
+
+**Production:** [https://piyush-anand.netlify.app](https://piyush-anand.netlify.app)  
+**Preview Deployments:** Auto-generated on every PR — check Netlify dashboard for preview URLs
+
+---
+
 ## 🚀 Tech Stack
 
 - **Framework**: React 18 + Vite 5
 - **Styling**: Vanilla CSS with CSS Custom Properties (Design System)
 - **Icons**: Lucide React
-- **Animations**: CSS @keyframes + IntersectionObserver (zero dependencies)
+- **Animations**: Framer Motion + CSS @keyframes (zero dependencies for basic animations)
 - **Forms**: Netlify Forms (serverless, no backend needed)
 - **Deployment**: Netlify (auto-deploy from GitHub)
 
@@ -24,34 +31,39 @@ portfolio/
 ├── src/
 │   ├── components/         # Reusable UI components
 │   │   ├── Button.jsx      # Button variants (Primary, Secondary, Ghost)
-│   │   ├── Navbar.jsx      # Fixed navigation with theme toggle
+│   │   ├── Navbar.jsx      # Fixed navigation with multi-theme dropdown
 │   │   ├── Footer.jsx      # Site footer with links
 │   │   ├── SectionHeader.jsx # Consistent section headings
 │   │   ├── SkillPill.jsx   # Skill tags & categories
 │   │   ├── TimelineCard.jsx # Experience timeline cards
 │   │   ├── ProjectCard.jsx # Project showcase cards
 │   │   ├── EducationCard.jsx # Education & certification cards
-│   │   └── SocialLinks.jsx # Social media link components
+│   │   ├── SocialLinks.jsx # Social media link components
+│   │   ├── CustomCursor.jsx # NEW: Magnetic cursor with follower
+│   │   ├── ParticleBackground.jsx # NEW: Canvas particle system
+│   │   └── GlassCard.jsx   # NEW: Glassmorphism card components
 │   ├── sections/           # Page sections (composed in App.jsx)
-│   │   ├── Hero.jsx        # Landing hero with stats
-│   │   ├── About.jsx       # Professional summary & strengths
-│   │   ├── Skills.jsx      # Categorized technical skills
-│   │   ├── Experience.jsx  # Work history timeline
-│   │   ├── Projects.jsx    # Featured projects grid
-│   │   ├── Education.jsx   # Degrees & certifications
-│   │   └── Contact.jsx     # Contact form + info
+│   │   ├── Hero.jsx        # Landing hero with particles & glass stats
+│   │   ├── About.jsx       # Professional summary & glass strength cards
+│   │   ├── Skills.jsx      # Categorized technical skills with animations
+│   │   ├── Experience.jsx  # Glass timeline work history
+│   │   ├── Projects.jsx    # Glass project cards grid
+│   │   ├── Education.jsx   # Glass education & certification cards
+│   │   └── Contact.jsx     # Glass contact form + resume download
 │   ├── data/               # 🔑 SINGLE SOURCE OF TRUTH
 │   │   ├── profile.js      # Personal info, contacts, summary
 │   │   ├── skills.js       # Categorized skills
 │   │   ├── experience.js   # Work history
 │   │   ├── projects.js     # Portfolio projects
 │   │   └── education.js    # Degrees & certifications
+│   ├── hooks/
+│   │   └── useTheme.js     # NEW: 5-theme system (Dark, Light, Ocean, Sunset, Forest)
 │   ├── assets/
-│   │   └── main.css        # Global design system (variables, utilities)
+│   │   └── main.css        # Global design system + animations
 │   ├── App.jsx             # Main layout composition
 │   └── main.jsx            # React entry point
 ├── index.html              # HTML template with SEO
-├── vite.config.js          # Vite configuration
+├── vite.config.js          # Vite configuration with optimization
 ├── package.json            # Dependencies & scripts
 ├── .gitignore              # Git ignore rules
 └── README.md               # This file
@@ -68,7 +80,7 @@ portfolio/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/Piyush7542/portfolio.git
 cd portfolio
 
 # 2. Install dependencies
@@ -103,71 +115,54 @@ npm run build
 
 Outputs optimized files to `dist/` folder ready for deployment.
 
-## 📦 Deploy to Netlify (Easiest Method)
+## 📦 Deploy to Netlify (Auto-Deploy Configured)
 
-### Option 1: GitHub → Netlify Auto-Deploy (Recommended)
+### Repository: https://github.com/Piyush7542/portfolio
 
-1. **Push to GitHub** (see Git section below)
-2. Go to [netlify.com](https://netlify.com) → Sign up/Login with GitHub
-3. Click **"Add new site"** → **"Import an existing project"**
-4. Select your GitHub repository
-5. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-6. Click **"Deploy site"**
-7. Netlify gives you a URL like `https://random-name.netlify.app`
-8. **Optional**: Change to custom domain in Site Settings → Domain Management
+### Netlify Settings
+| Setting | Value |
+|---------|-------|
+| **Build command** | `npm run build` |
+| **Publish directory** | `dist` |
+| **Node version** | 18+ |
+| **Auto-deploy** | ✅ Enabled (main branch) |
+| **Preview deploys** | ✅ Enabled (all PRs) |
 
-### Option 2: Drag & Drop (Manual)
+### Deployment Workflow
+1. Push to `main` → **Auto-deploys to production** (https://piyush-anand.netlify.app)
+2. Open a PR → **Auto-generates preview URL** (e.g., https://deploy-preview-123--piyush-anand.netlify.app)
+3. Merge PR → **Updates production automatically**
 
+### Manual Deploy (if needed)
 ```bash
 npm run build
-# Drag the `dist` folder to netlify.com/drop
+# Drag `dist` folder to netlify.com/drop
 ```
 
-### Environment Variables (if needed)
-None required for this setup. Netlify Forms works automatically.
+### Netlify Forms
+Contact form works automatically — submissions appear in Netlify dashboard → Forms.
 
-### Automatic Deploys
-Every `git push` to main branch → Netlify auto-builds & deploys ✨
+---
 
 ## 🔧 Git & GitHub Setup
 
-### First Time Setup
-
-```bash
-# 1. Initialize git (if not already)
-git init
-
-# 2. Add all files
-git add .
-
-# 3. Create first commit
-git commit -m "Initial commit: Portfolio website"
-
-# 4. Rename branch to main (modern standard)
-git branch -M main
-
-# 5. Add GitHub remote (replace YOUR_USERNAME)
-git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
-
-# 6. Push to GitHub
-git push -u origin main
-```
+### Repository
+**GitHub:** https://github.com/Piyush7542/portfolio
 
 ### Daily Workflow
 
 ```bash
-# Make changes to code
-# Test locally: npm run dev
+# 1. Make changes to code
+# 2. Test locally
+npm run dev
 
-# Stage changes
+# 3. Stage changes
 git add .
 
-# Commit with descriptive message
+# 4. Commit with descriptive message
 git commit -m "Update: Added new project to portfolio"
 
-# Push to GitHub (triggers Netlify deploy)
+# 5. Push to GitHub (triggers Netlify auto-deploy)
 git push
 ```
 
@@ -221,6 +216,14 @@ In `src/assets/main.css`, swap `:root` and `[data-theme="light"]` values, or cha
 ### Fonts
 Currently uses **Inter** from Google Fonts. Change in `index.html` and `main.css` `--font-family`.
 
+### Themes
+5 built-in themes in `src/hooks/useTheme.js`:
+- **Dark** (default) — Professional slate/emerald
+- **Light** — Clean white/emerald
+- **Ocean** — Deep blue/teal
+- **Sunset** — Warm red/coral
+- **Forest** — Natural green
+
 ## ✅ Pre-Launch Checklist
 
 - [ ] Update `profile.js` with your GitHub URL
@@ -231,7 +234,7 @@ Currently uses **Inter** from Google Fonts. Change in `index.html` and `main.css
 - [ ] Test locally: `npm run dev`
 - [ ] Build: `npm run build`
 - [ ] Push to GitHub
-- [ ] Deploy to Netlify
+- [ ] Deploy to Netlify (connect repo at netlify.com)
 - [ ] Test live site on mobile & desktop
 - [ ] Verify contact form works (check Netlify Forms dashboard)
 - [ ] Check SEO: View page source for meta tags
@@ -263,4 +266,7 @@ MIT License — feel free to use as a template for your own portfolio!
 
 ---
 
-**Built with ❤️ using React + Vite**
+**Built with ❤️ using React + Vite + Framer Motion**
+
+**Repository:** https://github.com/Piyush7542/portfolio  
+**Live Site:** https://piyush-anand.netlify.app
